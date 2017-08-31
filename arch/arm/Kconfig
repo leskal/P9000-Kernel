@@ -796,6 +796,242 @@ config ARCH_OMAP1
 	help
 	  Support for older TI OMAP1 (omap7xx, omap15xx or omap16xx)
 
+config ARCH_MT6735
+	bool "MediaTek MT6735"
+	select GENERIC_TIME
+	select GENERIC_CLOCKEVENTS
+	select ARCH_HAS_CPUFREQ
+	select ARM_HAS_SG_CHAIN
+	select ARM_AMBA
+	select CPU_V7
+	select HAVE_SMP
+	select NEED_MACH_MEMORY_H
+	select IRQ_DOMAIN
+	select IRQ_DOMAIN_DEBUG
+	select GENERIC_SCHED_CLOCK
+	select VFP_OPT
+	select MTK_SYSTRACKER
+	select MTK_SYS_CIRQ
+	select MTK_EIC
+	select MTK_GIC
+	select COMMON_CLK if !MTK_CLKMGR
+	select CPU_IDLE
+	select PINCTRL
+	select PINCTRL_MT6735
+	select MFD_SYSCON
+	select MTK_BASE_POWER
+	select KERNEL_MODE_NEON
+	select CRYPTO_AES_ARM32_CE
+	select CRYPTO_SHA2_ARM_CE
+	select ARM_ERRATA_836870
+	select MTK_IRQ_NEW_DESIGN
+	select MTK_IRQ_NEW_DESIGN_DEBUG
+	select MTK_POWER_GS
+	select MTK_CPU_STRESS
+	help
+	  This enable support for MediaTek MT6735
+
+config ARCH_MT6735M
+	bool "MediaTek MT6735M"
+	select GENERIC_TIME
+	select GENERIC_CLOCKEVENTS
+	select ARCH_HAS_CPUFREQ
+	select ARM_AMBA
+	select CPU_V7
+	select HAVE_SMP
+	select NEED_MACH_MEMORY_H
+	select IRQ_DOMAIN
+	select IRQ_DOMAIN_DEBUG
+	select GENERIC_SCHED_CLOCK
+	select VFP_OPT
+	select MTK_SYSTRACKER
+	select MTK_SYS_CIRQ
+	select MTK_EIC
+	select MTK_GIC
+	select ARM_HAS_SG_CHAIN
+	select PINCTRL
+	select PINCTRL_MT6735
+	select MFD_SYSCON
+	select CPU_IDLE
+	select ARM_MT6735_CPUIDLE
+	select MTK_BASE_POWER
+	select KERNEL_MODE_NEON
+	select CRYPTO_AES_ARM32_CE
+	select CRYPTO_SHA2_ARM_CE
+	select ARM_ERRATA_836870
+	select MTK_IRQ_NEW_DESIGN
+	select MTK_IRQ_NEW_DESIGN_DEBUG
+	select MTK_POWER_GS
+	select MTK_CPU_STRESS
+	help
+	  This enables support for MediaTek MT6735M
+	  Support for k35mv1
+	  Support for k35mv1_op01
+	  Support for k35mv1_op02
+
+config ARCH_MT6753
+	bool "MediaTek MT6753"
+	select GENERIC_TIME
+	select GENERIC_CLOCKEVENTS
+	select ARCH_HAS_CPUFREQ
+	select ARM_AMBA
+	select CPU_V7
+	select HAVE_SMP
+	select NEED_MACH_MEMORY_H
+	select IRQ_DOMAIN
+	select IRQ_DOMAIN_DEBUG
+	select GENERIC_SCHED_CLOCK
+	select VFP_OPT
+	select MTK_SYSTRACKER
+	select MTK_SYS_CIRQ
+	select MTK_EIC
+	select MTK_GIC
+	select ARM_HAS_SG_CHAIN
+	select PINCTRL
+	select PINCTRL_MT6735
+	select MFD_SYSCON
+	select CPU_IDLE
+	select ARM_MT6735_CPUIDLE
+	select KERNEL_MODE_NEON
+	select CRYPTO_AES_ARM32_CE
+	select CRYPTO_SHA2_ARM_CE
+	select MTK_BASE_POWER
+	select ARM_ERRATA_836870
+	select MTK_IRQ_NEW_DESIGN
+	select MTK_IRQ_NEW_DESIGN_DEBUG
+	select MTK_POWER_GS
+	select MTK_CPU_STRESS
+	help
+	  This enable support for MediaTek MT6753
+	  To enable related drivers
+	  Support for k53v1 related projects
+	  Support for k53v1_op02_1g
+
+
+config ARCH_MT6580
+	bool "MediaTek MT6580"
+	select GENERIC_TIME
+	select GENERIC_CLOCKEVENTS
+	select ARCH_HAS_CPUFREQ
+	select ARM_AMBA
+	select CPU_V7
+	select FIQ_GLUE if (!TRUSTONIC_TEE_SUPPORT)
+	select HAVE_SMP
+	select NEED_MACH_MEMORY_H
+	select IRQ_DOMAIN
+	select IRQ_DOMAIN_DEBUG
+	select GENERIC_SCHED_CLOCK
+	select VFP_OPT
+	select ARCH_REQUIRE_GPIOLIB
+	select KERNEL_MODE_NEON
+	select CRYPTO_AES_ARM_BS
+	select CRYPTO_SHA2_ARM_CE
+	select MTK_SYS_CIRQ
+	select ARM_HAS_SG_CHAIN
+	select MTK_BASE_POWER
+	select MTK_EIC
+	select MTK_WATCHPOINT
+	select PINCTRL
+	select PINCTRL_MT6580
+	select MFD_SYSCON
+	select MTK_DEBUG_LATCH
+	select MTK_LASTPC
+	select CPU_IDLE
+	select ARM_MT6735_CPUIDLE
+	select MTK_SYSTRACKER_V2
+	select ARM_ERRATA_814220
+	select MTK_POWER_GS
+	select MTK_CPU_STRESS
+	select MTK_IRQ_NEW_DESIGN
+	select MTK_IRQ_NEW_DESIGN_DEBUG
+	select MTK_NO_ATF
+	help
+	  This enable support for MediaTek MT6580
+
+config ARCH_MT6755
+	bool "MediaTek MT6755"
+	select GENERIC_TIME
+	select GENERIC_CLOCKEVENTS
+	select ARCH_HAS_CPUFREQ
+	select ARM_AMBA
+	select CPU_V7
+	select HAVE_SMP
+	select NEED_MACH_MEMORY_H
+	select IRQ_DOMAIN
+	select IRQ_DOMAIN_DEBUG
+	select GENERIC_SCHED_CLOCK
+	select ARCH_REQUIRE_GPIOLIB
+	select MTK_SYS_CIRQ
+	select MTK_GIC
+	select MTK_EIC
+	select CPU_IDLE
+	select PINCTRL
+	select KERNEL_MODE_NEON
+	select CRYPTO_AES_ARM32_CE
+	select CRYPTO_SHA2_ARM_CE
+	select MTK_BASE_POWER
+	select ARM_HAS_SG_CHAIN
+	select COMMON_CLK if !MTK_CLKMGR
+	select PINCTRL_MT6755
+	select MTK_POWER_GS
+	select MTK_LM_MODE if !MTK_GMO_RAM_OPTIMIZE
+	select POWER_SUPPLY
+	select MTK_IRQ_NEW_DESIGN
+	select MTK_IRQ_NEW_DESIGN_DEBUG
+	select MTK_SYSTRACKER_V2
+	help
+	  This enable support for MediaTek MT6755
+
+config ARCH_MT8127
+	bool "MediaTek MT8127"
+	select ARCH_MEDIATEK
+	select SPARSE_IRQ
+	select COMMON_CLK if !MTK_CLKMGR
+	select GENERIC_CLOCKEVENTS
+	select ARM_AMBA
+	select CPU_V7
+	select HAVE_SMP
+	select NEED_MACH_MEMORY_H
+	select IRQ_DOMAIN
+	select IRQ_DOMAIN_DEBUG
+	select ARCH_REQUIRE_GPIOLIB
+	select KERNEL_MODE_NEON
+	select CRYPTO_AES_ARM_BS
+	select ARM_HAS_SG_CHAIN
+	select MTK_BASE_POWER
+	select MFD_SYSCON
+	select CPU_IDLE
+	select ARM_ERRATA_814220
+	select MTK_SYS_CIRQ
+	select MTK_GIC_EXT
+	help
+	  This enable support for MediaTek MT8127
+
+config ARCH_MT7623
+	bool "MediaTek MT7623"
+	select ARCH_MEDIATEK
+	select SPARSE_IRQ
+	select COMMON_CLK if !MTK_CLKMGR
+	select GENERIC_CLOCKEVENTS
+	select ARM_AMBA
+	select CPU_V7
+	select HAVE_SMP
+	select NEED_MACH_MEMORY_H
+	select IRQ_DOMAIN
+	select IRQ_DOMAIN_DEBUG
+	select ARCH_REQUIRE_GPIOLIB
+	select KERNEL_MODE_NEON
+	select CRYPTO_AES_ARM_BS
+	select ARM_HAS_SG_CHAIN
+	select MTK_BASE_POWER
+	select MFD_SYSCON
+	select CPU_IDLE
+	select ARM_ERRATA_814220
+	select MTK_SYS_CIRQ
+	select MTK_GIC_EXT
+	help
+	  This enable support for MediaTek MT7623
+
 endchoice
 
 menu "Multiple platform selection"

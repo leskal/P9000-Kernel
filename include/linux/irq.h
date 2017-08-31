@@ -815,6 +815,28 @@ static inline void irq_gc_lock(struct irq_chip_generic *gc) { }
 static inline void irq_gc_unlock(struct irq_chip_generic *gc) { }
 #endif
 
+#ifdef CONFIG_MTK_IRQ_NEW_DESIGN
+#include <linux/rculist.h>
+
+struct per_cpu_irq_desc {
+	struct list_head list;
+	struct irq_desc *desc;
+};
+
+struct thread_safe_list {
+	struct list_head list;
+	spinlock_t lock;
+};
+
+extern struct thread_safe_list irq_need_migrate_list[CONFIG_NR_CPUS];
+
+void update_affinity_settings(struct irq_desc *desc, const struct cpumask *new_affinity, bool update_smp_affinity);
+void dump_irq_need_migrate_list(const struct cpumask *mask);
+
+extern bool mt_get_irq_gic_targets(struct irq_data *d, cpumask_t *mask);
+extern bool mt_is_secure_irq(struct irq_data *d);
+#endif
+
 /*
  * The irqsave variants are for usage in non interrupt code. Do not use
  * them in irq_chip callbacks. Use irq_gc_lock() instead.

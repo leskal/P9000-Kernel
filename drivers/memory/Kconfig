@@ -41,6 +41,15 @@ config TI_EMIF
 	  parameters and other settings during frequency, voltage and
 	  temperature changes
 
+config MTK_SMI
+	bool "MTK SMI"
+	depends on ARCH_MEDIATEK || COMPILE_TEST
+	help
+	  This driver is for the Memory Controller module in MediaTek SoCs,
+	  mainly help enable/disable iommu, help control the power-domain and
+	  the clocks for each local arbiter. It also help bandwidth control
+	  for different scenario.
+
 config MVEBU_DEVBUS
 	bool "Marvell EBU Device Bus Controller"
 	default y

@@ -309,6 +309,17 @@ config MTD_SWAP
 	  The driver provides wear leveling by storing erase counter into the
 	  OOB.
 
+config MTK_FTL
+	tristate "MTK new translation layer"
+	depends on BLOCK
+	select MTD_BLKDEVS
+	select MTD_NAND_ECC
+	help
+	  This provides R/W support for MTK FTL (Flash translation layer).
+	  Which is developed by MTK and used on MTK NAND chipsets
+	  It emulates NAND devices as block devices and be able to mount
+	  on ext3/ext4/fat/....
+
 source "drivers/mtd/chips/Kconfig"
 
 source "drivers/mtd/maps/Kconfig"
